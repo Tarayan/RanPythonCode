@@ -4,7 +4,7 @@ import joblib
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder="templates")
 
 data = pd.read_csv('health_care_diabetes.csv')
 
@@ -28,12 +28,12 @@ def predict():
             features = [np.array(scaled_features)]
             prediction = random_forest_model.predict(features)
 
-            return render_template('C://Users/Tarayan/OneDrive/Desktop/RanPythonCode/app/templates/base.html', pred='The predicted value is {}'.format(prediction[0]))
+            return render_template('base.html', pred='The predicted value is {}'.format(prediction[0]))
 
     except Exception as e:
-        return render_template('C://Users/Tarayan/OneDrive/Desktop/RanPythonCode/app/templates/base.html', error_message=str(e))
+        return render_template('base.html', error_message=str(e))
 
-    return render_template('C://Users/Tarayan/OneDrive/Desktop/RanPythonCode/app/templates/base.html', pred='')
+    return render_template('base.html', pred='')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
