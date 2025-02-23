@@ -4,7 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+
 
         
         {
@@ -13,8 +13,8 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "startup:app",
-                "FLASK_ENV": "development",
+                "FLASK_APP":"startup:app",
+                "FLASK_ENV":"development",
                 "FLASK_DEBUG": "1"
             },
             "args": [
